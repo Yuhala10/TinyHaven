@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   TINY HAVEN — script.js
+   TINY HOMES — script.js
    Cinematic · Smooth · Alive
 ═══════════════════════════════════════════════════ */
 
@@ -280,11 +280,11 @@ function submitDream(e) {
   const features = [...document.querySelectorAll('.check-opt input:checked')]
     .map(c => c.value).join(', ') || 'None specified';
 
-  const subject = encodeURIComponent('New Tiny Haven Custom Build Request');
+  const subject = encodeURIComponent('Tiny Homes Inquiry - Purchase Request');
   const body = encodeURIComponent(
-`Hello Tiny Haven Team,
+`Hello Tiny Homes Team,
 
-I'd like to start my custom build journey!
+I'm interested in purchasing a tiny home!
 
 ━━━━━━━━━━━━━━━━━━━━━━━
 CONTACT DETAILS
@@ -309,7 +309,7 @@ MY DREAM HOME
 ━━━━━━━━━━━━━━━━━━━━━━━
 ${fdesc || 'No additional details provided.'}
 
-Sent from tinyhaven.com`
+Sent from tinyhomes.com`
   );
 
   const submitBtn = document.getElementById('submitBtn');
@@ -317,9 +317,9 @@ Sent from tinyhaven.com`
   submitBtn.querySelector('span').textContent = 'Sending...';
 
   setTimeout(() => {
-    window.location.href = `mailto:yuhala24@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:michealtinyhomesforsale@gmail.com?subject=${subject}&body=${body}`;
     submitBtn.classList.remove('loading');
-    submitBtn.querySelector('span').textContent = 'Send My Dream';
+    submitBtn.querySelector('span').textContent = 'Get Your Home';
     showToast('✨ Opening your email client...', 'success');
     document.getElementById('dreamForm').reset();
     document.querySelectorAll('.style-opt').forEach(o => o.classList.remove('selected'));
