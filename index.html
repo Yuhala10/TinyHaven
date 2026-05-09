@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Tiny Haven — Handcrafted tiny homes built for freedom, simplicity and soul."/>
+  <meta name="keywords" content="tiny home, tiny house, custom tiny home, off-grid living, minimalist home, container home, cabin"/>
+  <meta property="og:title" content="Tiny Haven — Live Small. Dream Big."/>
+  <title>Tiny Haven — Live Small. Dream Big.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- GRAIN OVERLAY -->
+<div class="grain"></div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-circle" id="cursorCircle"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pre-content">
+    <div class="pre-logo">TINY<span>HAVEN</span></div>
+    <div class="pre-line"><div class="pre-fill"></div></div>
+    <div class="pre-tagline">Live Small. Dream Big.</div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">TINY<span>HAVEN</span></a>
+    <ul class="nav-links">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#how">Process</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#order" class="nav-cta">Build Yours</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#gallery" onclick="closeNav()">Gallery</a>
+  <a href="#how" onclick="closeNav()">Process</a>
+  <a href="#why" onclick="closeNav()">Why Us</a>
+  <a href="#testimonials" onclick="closeNav()">Stories</a>
+  <a href="#about" onclick="closeNav()">About</a>
+  <a href="#order" onclick="closeNav()">Build Yours</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="hero-bg" id="heroBg">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80" alt="Tiny Home" class="hero-img"/>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag reveal-fade">Est. 2016 &nbsp;·&nbsp; Handcrafted Tiny Homes</div>
+    <h1 class="hero-title">
+      <span class="hero-line reveal-up" style="animation-delay:.1s">Live</span>
+      <span class="hero-line hero-italic reveal-up" style="animation-delay:.25s">Small.</span>
+      <span class="hero-line reveal-up" style="animation-delay:.4s">Dream Big.</span>
+    </h1>
+    <p class="hero-sub reveal-fade" style="animation-delay:.6s">We design and build handcrafted tiny homes that set you free — from mortgage, from clutter, from compromise.</p>
+    <div class="hero-btns reveal-fade" style="animation-delay:.8s">
+      <a href="#gallery" class="btn-outline">Explore Homes</a>
+      <a href="#order" class="btn-solid">Start Your Build</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Handcrafted</span><span class="dot">·</span>
+    <span>Off-Grid Ready</span><span class="dot">·</span>
+    <span>Custom Built</span><span class="dot">·</span>
+    <span>Sustainably Sourced</span><span class="dot">·</span>
+    <span>Freedom by Design</span><span class="dot">·</span>
+    <span>500+ Homes Built</span><span class="dot">·</span>
+    <span>Handcrafted</span><span class="dot">·</span>
+    <span>Off-Grid Ready</span><span class="dot">·</span>
+    <span>Custom Built</span><span class="dot">·</span>
+    <span>Sustainably Sourced</span><span class="dot">·</span>
+    <span>Freedom by Design</span><span class="dot">·</span>
+    <span>500+ Homes Built</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-num">01</div>
+      <div class="section-head-text">
+        <div class="section-tag">Our Homes</div>
+        <h2 class="section-title">Featured <em>Builds</em></h2>
+        <p class="section-sub">Every home is a unique story. Every build a labour of love.</p>
+      </div>
+    </div>
+    <div class="filter-bar reveal-up">
+      <button class="filter-btn active" data-filter="all">All Homes</button>
+      <button class="filter-btn" data-filter="modern">Modern</button>
+      <button class="filter-btn" data-filter="rustic">Rustic</button>
+      <button class="filter-btn" data-filter="cabin">Cabin</button>
+      <button class="filter-btn" data-filter="container">Container</button>
+    </div>
+    <div class="masonry-grid" id="masonryGrid">
+      <div class="grid-item reveal-up" data-category="modern" style="animation-delay:.05s">
+        <div class="grid-img-wrap">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80" alt="Modern Tiny Home" loading="lazy"/>
+          <div class="grid-overlay">
+            <div class="overlay-tag">Modern</div>
+            <h3>The Horizon</h3>
+            <p>320 sqft · Off-Grid Ready</p>
+            <a href="#order" class="overlay-btn">Build Similar</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item grid-tall reveal-up" data-category="rustic" style="animation-delay:.1s">
+        <div class="grid-img-wrap">
+          <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80" alt="Rustic Cabin" loading="lazy"/>
+          <div class="grid-overlay">
+            <div class="overlay-tag">Rustic</div>
+            <h3>The Woodsman</h3>
+            <p>280 sqft · Forest Living</p>
+            <a href="#order" class="overlay-btn">Build Similar</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item reveal-up" data-category="container" style="animation-delay:.15s">
+        <div class="grid-img-wrap">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80" alt="Container Home" loading="lazy"/>
+          <div class="grid-overlay">
+            <div class="overlay-tag">Container</div>
+            <h3>The Steel Dream</h3>
+            <p>400 sqft · Industrial Chic</p>
+            <a href="#order" class="overlay-btn">Build Similar</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item grid-wide reveal-up" data-category="cabin" style="animation-delay:.2s">
+        <div class="grid-img-wrap">
+          <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1200&q=80" alt="Cabin Home" loading="lazy"/>
+          <div class="grid-overlay">
+            <div class="overlay-tag">Cabin</div>
+            <h3>The Pineview</h3>
+            <p>350 sqft · Mountain Retreat</p>
+            <a href="#order" class="overlay-btn">Build Similar</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item reveal-up" data-category="modern" style="animation-delay:.25s">
+        <div class="grid-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Modern Home" loading="lazy"/>
+          <div class="grid-overlay">
+            <div class="overlay-tag">Modern</div>
+            <h3>The Minimalist</h3>
+            <p>240 sqft · Urban Living</p>
+            <a href="#order" class="overlay-btn">Build Similar</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item grid-tall reveal-up" data-category="rustic" style="animation-delay:.3s">
+        <div class="grid-img-wrap">
+          <img src="https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?w=800&q=80" alt="Rustic Home" loading="lazy"/>
+          <div class="grid-overlay">
+            <div class="overlay-tag">Rustic</div>
+            <h3>The Nomad</h3>
+            <p>200 sqft · On Wheels</p>
+            <a href="#order" class="overlay-btn">Build Similar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-num">02</div>
+      <div class="section-head-text">
+        <div class="section-tag">The Process</div>
+        <h2 class="section-title">How It <em>Works</em></h2>
+        <p class="section-sub">Three simple steps from dream to doorstep.</p>
+      </div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal-up" style="animation-delay:.05s">
+        <div class="step-number">01</div>
+        <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>Tell Us Your Dream</h3>
+        <p>Fill out our custom build form — describe your perfect home in every detail. Size, style, location, lifestyle. No dream is too big or too small.</p>
+      </div>
+      <div class="step-connector reveal-up" style="animation-delay:.12s"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step-card reveal-up" style="animation-delay:.15s">
+        <div class="step-number">02</div>
+        <div class="step-icon"><i class="fa-solid fa-drafting-compass"></i></div>
+        <h3>We Design & Craft</h3>
+        <p>Our master builders design your home with precision and passion. Detailed plans, material selections and a clear timeline before we break ground.</p>
+      </div>
+      <div class="step-connector reveal-up" style="animation-delay:.22s"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step-card reveal-up" style="animation-delay:.25s">
+        <div class="step-number">03</div>
+        <div class="step-icon"><i class="fa-solid fa-house-chimney"></i></div>
+        <h3>Move Into Freedom</h3>
+        <p>We deliver your finished home anywhere in the world. Keys in hand, life begins. Full handover walkthrough and lifetime support included.</p>
+      </div>
+    </div>
+    <div class="how-cta reveal-up">
+      <a href="#order" class="btn-solid">Start The Process</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section id="order" class="order-section">
+  <div class="container">
+    <div class="order-split">
+      <div class="order-left reveal-left">
+        <div class="section-num">03</div>
+        <div class="section-tag">Custom Build</div>
+        <h2 class="section-title">Build Your<br><em>Dream Home</em></h2>
+        <p>Every Tiny Haven is uniquely yours. Tell us everything — we'll handle the rest with precision and love.</p>
+        <div class="order-promises">
+          <div class="promise"><i class="fa-solid fa-leaf"></i><span>Sustainably built</span></div>
+          <div class="promise"><i class="fa-solid fa-shield-halved"></i><span>Full warranty</span></div>
+          <div class="promise"><i class="fa-solid fa-clock"></i><span>On-time delivery</span></div>
+          <div class="promise"><i class="fa-solid fa-headset"></i><span>Lifetime support</span></div>
+        </div>
+        <div class="order-contact-info">
+          <a href="mailto:yuhala24@gmail.com"><i class="fa-solid fa-envelope"></i> yuhala24@gmail.com</a>
+          <a href="tel:+237681731512"><i class="fa-solid fa-phone"></i> +237 681 731 512</a>
+        </div>
+      </div>
+      <div class="order-right reveal-right">
+        <form class="dream-form" id="dreamForm" onsubmit="submitDream(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="fname" placeholder="Your name" required/>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" id="femail" placeholder="your@email.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone / WhatsApp *</label>
+              <input type="tel" id="fphone" placeholder="+1 234 567 8900" required/>
+            </div>
+            <div class="form-group">
+              <label>Preferred Size (sqft)</label>
+              <input type="text" id="fsize" placeholder="e.g. 200–400 sqft"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Home Style *</label>
+            <div class="style-picker">
+              <div class="style-opt" data-val="modern" onclick="pickStyle(this)"><i class="fa-solid fa-cube"></i> Modern</div>
+              <div class="style-opt" data-val="rustic" onclick="pickStyle(this)"><i class="fa-solid fa-tree"></i> Rustic</div>
+              <div class="style-opt" data-val="cabin" onclick="pickStyle(this)"><i class="fa-solid fa-house-chimney"></i> Cabin</div>
+              <div class="style-opt" data-val="container" onclick="pickStyle(this)"><i class="fa-solid fa-box"></i> Container</div>
+            </div>
+            <input type="hidden" id="fstyle"/>
+          </div>
+          <div class="form-group">
+            <label>Location / Where to Build</label>
+            <input type="text" id="flocation" placeholder="City, country or describe your land"/>
+          </div>
+          <div class="form-group">
+            <label>Power & Utilities</label>
+            <div class="radio-row">
+              <label class="radio-opt"><input type="radio" name="grid" value="off-grid"/> Off-Grid</label>
+              <label class="radio-opt"><input type="radio" name="grid" value="connected"/> Grid Connected</label>
+              <label class="radio-opt"><input type="radio" name="grid" value="hybrid"/> Hybrid</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Special Features</label>
+            <div class="check-grid">
+              <label class="check-opt"><input type="checkbox" value="Solar panels"/> Solar Panels</label>
+              <label class="check-opt"><input type="checkbox" value="Loft bedroom"/> Loft Bedroom</label>
+              <label class="check-opt"><input type="checkbox" value="On wheels"/> On Wheels</label>
+              <label class="check-opt"><input type="checkbox" value="Rooftop deck"/> Rooftop Deck</label>
+              <label class="check-opt"><input type="checkbox" value="Rainwater system"/> Rainwater System</label>
+              <label class="check-opt"><input type="checkbox" value="Wood stove"/> Wood Stove</label>
+              <label class="check-opt"><input type="checkbox" value="Murphy bed"/> Murphy Bed</label>
+              <label class="check-opt"><input type="checkbox" value="Workshop space"/> Workshop Space</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Timeline</label>
+              <select id="ftimeline">
+                <option value="">When do you need it?</option>
+                <option>As soon as possible</option>
+                <option>Within 3 months</option>
+                <option>Within 6 months</option>
+                <option>Within 1 year</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Budget Range</label>
+              <select id="fbudget">
+                <option value="">Select a range</option>
+                <option>Under $20,000</option>
+                <option>$20,000 – $40,000</option>
+                <option>$40,000 – $70,000</option>
+                <option>$70,000 – $100,000</option>
+                <option>$100,000+</option>
+                <option>Let's discuss</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell Us More About Your Dream Home</label>
+            <textarea id="fdesc" rows="4" placeholder="Describe your ideal home — views, atmosphere, how you'll live in it..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span>Send My Dream</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="why-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-num">04</div>
+      <div class="section-head-text">
+        <div class="section-tag">Why Tiny Haven</div>
+        <h2 class="section-title">Built Different.<br><em>By Design.</em></h2>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item reveal-up" style="animation-delay:.05s">
+        <div class="stat-num" data-target="500">0</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">Homes Built</div>
+      </div>
+      <div class="stat-item reveal-up" style="animation-delay:.15s">
+        <div class="stat-num" data-target="28">0</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-item reveal-up" style="animation-delay:.25s">
+        <div class="stat-num" data-target="98">0</div>
+        <div class="stat-plus">%</div>
+        <div class="stat-label">Satisfaction</div>
+      </div>
+      <div class="stat-item reveal-up" style="animation-delay:.35s">
+        <div class="stat-num" data-target="8">0</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal-up" style="animation-delay:.05s">
+        <div class="trust-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h4>Sustainably Sourced</h4>
+        <p>Every beam, every board — ethically sourced, FSC certified timber and recycled materials wherever possible.</p>
+      </div>
+      <div class="trust-card reveal-up" style="animation-delay:.12s">
+        <div class="trust-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <h4>Precision Craftsmanship</h4>
+        <p>Our master builders bring decades of expertise to every joint, corner and finish. No shortcuts. Ever.</p>
+      </div>
+      <div class="trust-card reveal-up" style="animation-delay:.19s">
+        <div class="trust-icon"><i class="fa-solid fa-solar-panel"></i></div>
+        <h4>Off-Grid Specialists</h4>
+        <p>Solar systems, rainwater collection, composting — we build homes that thrive completely off the grid.</p>
+      </div>
+      <div class="trust-card reveal-up" style="animation-delay:.26s">
+        <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h4>Delivered Anywhere</h4>
+        <p>We've delivered tiny homes to mountains, beaches, forests and cities across 28 countries worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testi-section">
+  <div class="container">
+    <div class="section-header reveal-up" style="justify-content:center;text-align:center">
+      <div class="section-head-text">
+        <div class="section-tag" style="justify-content:center">Real Stories</div>
+        <h2 class="section-title">Lives <em>Changed</em></h2>
+        <p class="section-sub">From our clients — in their own words.</p>
+      </div>
+    </div>
+    <div class="testi-carousel" id="testiCarousel">
+      <div class="testi-slide active">
+        <div class="testi-quote-mark">"</div>
+        <p class="testi-text">Moving into my Tiny Haven was the single best decision of my life. I freed myself from a 30-year mortgage and now I wake up every morning in a forest. The craftsmanship is extraordinary — every detail was exactly what I described.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#8B6914,#5a4010)">SR</div>
+          <div class="testi-info">
+            <strong>Sarah R.</strong>
+            <span>Colorado, USA · Modern 320sqft</span>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-quote-mark">"</div>
+        <p class="testi-text">I never thought I could afford a beautiful home. Tiny Haven made it possible. The whole team listened to every detail — the reclaimed wood walls, the loft bedroom, the solar setup. It's perfect. It's mine.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#3d6b4f,#1a3d2a)">MK</div>
+          <div class="testi-info">
+            <strong>Marcus K.</strong>
+            <span>British Columbia, Canada · Rustic 280sqft</span>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-quote-mark">"</div>
+        <p class="testi-text">We wanted to raise our family differently — closer to nature, free from debt, intentional. Tiny Haven built us a cabin that feels like a luxury retreat. Our kids say it's magical. We agree. Worth every single penny.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7a4f2e,#4a2e10)">LT</div>
+          <div class="testi-info">
+            <strong>Lisa & Tom B.</strong>
+            <span>Vermont, USA · Cabin 400sqft</span>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-controls">
+      <button class="testi-arrow" onclick="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
+      <div class="testi-dots" id="testiDots">
+        <span class="tdot active" onclick="goSlide(0)"></span>
+        <span class="tdot" onclick="goSlide(1)"></span>
+        <span class="tdot" onclick="goSlide(2)"></span>
+      </div>
+      <button class="testi-arrow" onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-split">
+      <div class="about-img-wrap reveal-left">
+        <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=900&q=80" alt="Our Workshop"/>
+        <div class="about-img-tag">Est. 2016 · Handcrafted with Love</div>
+      </div>
+      <div class="about-content reveal-right">
+        <div class="section-num">05</div>
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title">We Believe in<br><em>Freedom by Design</em></h2>
+        <p>Tiny Haven was born from a simple belief — that a beautiful, meaningful home doesn't have to cost you your life savings, your freedom, or your values.</p>
+        <p>We started in 2016 with one workshop, two builders, and a stubborn conviction that people deserved better. Eight years and 500+ homes later, we're still building with the same hands-on care and the same obsession with quality that started it all.</p>
+        <p>Every home we build is a conversation — between your vision and our craft. We don't do cookie-cutter. We don't do cheap. We do <em>yours</em>.</p>
+        <a href="#order" class="btn-solid" style="margin-top:2rem;display:inline-flex;align-items:center;gap:.6rem">Start Your Journey <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">TINY<span>HAVEN</span></div>
+          <p>Handcrafted tiny homes for people who choose freedom over everything else.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="#gallery">Our Homes</a></li>
+            <li><a href="#how">The Process</a></li>
+            <li><a href="#why">Why Tiny Haven</a></li>
+            <li><a href="#testimonials">Client Stories</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Styles</h5>
+          <ul>
+            <li><a href="#gallery">Modern</a></li>
+            <li><a href="#gallery">Rustic</a></li>
+            <li><a href="#gallery">Cabin</a></li>
+            <li><a href="#gallery">Container</a></li>
+            <li><a href="#gallery">Off-Grid</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:yuhala24@gmail.com"><i class="fa-solid fa-envelope"></i> yuhala24@gmail.com</a></li>
+            <li><a href="tel:+237681731512"><i class="fa-solid fa-phone"></i> +237 681 731 512</a></li>
+          </ul>
+          <div class="newsletter">
+            <h5>Stay Inspired</h5>
+            <div class="newsletter-row">
+              <input type="email" id="newsletterEmail" placeholder="Your email"/>
+              <button onclick="subscribeNewsletter()"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Tiny Haven. All rights reserved. Built with love and sawdust.</p>
+        <p class="footer-tagline">Freedom by Design.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
