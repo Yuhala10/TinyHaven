@@ -247,6 +247,24 @@ body:has(button:hover) .cursor-circle {
     rgba(20,15,8,0.65) 100%
   );
 }
+.hero-showcase {
+  position:absolute; right:5%; top:50%;
+  transform:translateY(-50%);
+  z-index:5;
+  width:300px; height:200px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  opacity:0.9;
+}
+.hero-showcase-img img {
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform 0.3s ease;
+}
+.hero-showcase-img:hover img {
+  transform:scale(1.05);
+}
 .hero-content {
   position:relative; z-index:5;
   max-width:900px;
@@ -439,6 +457,89 @@ section { padding:110px 0; }
   from { opacity:0; transform:scale(0.95); }
   to { opacity:1; transform:scale(1); }
 }
+
+/* ── SIGNATURE COLLECTION OVERLAY ── */
+.signature-overlay {
+  grid-column:1 / -1;
+  margin-bottom:2rem;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.signature-overlay-bg {
+  position:relative;
+  height:400px;
+  background:linear-gradient(135deg, rgba(10,8,4,0.4) 0%, rgba(10,8,4,0.7) 100%);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.signature-overlay-bg img {
+  width:100%; height:100%;
+  object-fit:cover;
+  filter:brightness(0.6) contrast(1.1);
+}
+.signature-overlay-content {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:flex-start;
+  padding:3rem;
+  color:var(--white);
+}
+.signature-badge {
+  display:inline-block;
+  font-size:0.8rem; letter-spacing:3px;
+  text-transform:uppercase;
+  background:linear-gradient(135deg, var(--wood), var(--warm));
+  color:var(--white);
+  padding:0.4rem 1rem;
+  border-radius:50px;
+  margin-bottom:1rem;
+  box-shadow:0 4px 15px rgba(139,105,20,0.3);
+}
+.signature-overlay-content h3 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:2.5rem; font-weight:600;
+  margin-bottom:0.8rem;
+  line-height:1.1;
+}
+.signature-overlay-content p {
+  font-size:1.1rem;
+  color:rgba(255,255,255,0.8);
+  max-width:400px;
+  line-height:1.6;
+  margin-bottom:1.5rem;
+}
+.signature-features {
+  display:flex; gap:1.5rem; flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.signature-features span {
+  font-size:0.85rem;
+  color:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.1);
+  padding:0.4rem 0.8rem;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+}
+.signature-cta {
+  display:inline-flex; align-items:center;
+  font-size:0.9rem; letter-spacing:2px;
+  text-transform:uppercase; font-weight:500;
+  background:linear-gradient(135deg, var(--wood), var(--warm));
+  color:var(--white);
+  padding:0.8rem 1.8rem;
+  border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(139,105,20,0.4);
+  transition:all var(--transition);
+  gap:10px;
+}
+.signature-cta:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(139,105,20,0.5);
+  gap:15px;
+}
+.signature-cta::after { content:'→'; }
 
 /* ── HOW IT WORKS ── */
 .how-section {
@@ -767,6 +868,146 @@ section { padding:110px 0; }
   transition:all var(--transition);
 }
 .tdot.active { background:var(--wood); width:20px; border-radius:3px; }
+
+/* ── WORKSHOP ── */
+.workshop-section { background:var(--cream); padding:8rem 0; }
+.workshop-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;
+  margin-top:4rem;
+}
+.workshop-item {
+  position:relative; border-radius:16px; overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.workshop-item:hover {
+  transform:translateY(-8px);
+  box-shadow:0 30px 80px rgba(0,0,0,0.15);
+}
+.workshop-img-wrap {
+  position:relative; width:100%; height:250px; overflow:hidden;
+}
+.workshop-img-wrap img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 0.8s ease;
+}
+.workshop-item:hover .workshop-img-wrap img { transform:scale(1.05); }
+.workshop-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(10,8,4,0.7) 0%, rgba(10,8,4,0.3) 100%);
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:2rem; color:white;
+  opacity:0; transform:translateY(20px);
+  transition:all var(--transition);
+}
+.workshop-item:hover .workshop-overlay {
+  opacity:1; transform:translateY(0);
+}
+.workshop-overlay h3 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.5rem; font-weight:600; margin-bottom:0.5rem;
+}
+.workshop-overlay p {
+  font-size:0.9rem; opacity:0.9; margin:0;
+}
+.workshop-cta {
+  text-align:center; margin-top:4rem;
+}
+
+/* ── WORKSHOP OVERVIEW OVERLAY ── */
+.workshop-overview-overlay {
+  margin:3rem 0 4rem;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 25px 70px rgba(0,0,0,0.12);
+}
+.workshop-overlay-bg {
+  position:relative;
+  height:350px;
+  background:linear-gradient(135deg, rgba(139,105,20,0.1) 0%, rgba(10,8,4,0.6) 100%);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.workshop-overlay-bg img {
+  width:100%; height:100%;
+  object-fit:cover;
+  filter:brightness(0.7) contrast(1.05) saturate(1.1);
+}
+.workshop-overlay-content {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:flex-start;
+  padding:3rem;
+  color:var(--white);
+}
+.workshop-badge {
+  display:inline-block;
+  font-size:0.8rem; letter-spacing:3px;
+  text-transform:uppercase;
+  background:linear-gradient(135deg, var(--warm), var(--wood));
+  color:var(--white);
+  padding:0.4rem 1rem;
+  border-radius:50px;
+  margin-bottom:1rem;
+  box-shadow:0 4px 15px rgba(212,196,160,0.3);
+}
+.workshop-overlay-content h3 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:2.2rem; font-weight:600;
+  margin-bottom:0.8rem;
+  line-height:1.1;
+}
+.workshop-overlay-content p {
+  font-size:1.05rem;
+  color:rgba(255,255,255,0.85);
+  max-width:380px;
+  line-height:1.6;
+  margin-bottom:1.8rem;
+}
+.workshop-stats {
+  display:flex; gap:2rem; flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.workshop-stats .stat {
+  display:flex; flex-direction:column;
+  align-items:center; text-align:center;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+  padding:1rem 1.2rem;
+  border-radius:12px;
+  min-width:80px;
+}
+.workshop-stats .stat-num {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.8rem; font-weight:600;
+  color:var(--warm);
+  line-height:1;
+}
+.workshop-stats .stat-label {
+  font-size:0.7rem; letter-spacing:1px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.8);
+  margin-top:0.3rem;
+}
+.workshop-cta {
+  display:inline-flex; align-items:center;
+  font-size:0.9rem; letter-spacing:2px;
+  text-transform:uppercase; font-weight:500;
+  background:linear-gradient(135deg, var(--warm), var(--wood));
+  color:var(--white);
+  padding:0.8rem 1.8rem;
+  border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(212,196,160,0.4);
+  transition:all var(--transition);
+  gap:10px;
+}
+.workshop-cta:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(212,196,160,0.5);
+  gap:15px;
+}
+.workshop-cta::after { content:'→'; }
 
 /* ── ABOUT ── */
 .about-section { background:var(--sand); }
