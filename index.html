@@ -421,8 +421,8 @@
           <div class="promise"><i class="fa-solid fa-credit-card"></i><span>Flexible financing</span></div>
         </div>
         <div class="order-contact-info">
-          <a href="mailto:michealtinyhomesforsale@gmail.com"><i class="fa-solid fa-envelope"></i> michealtinyhomesforsale@gmail.com</a>
-          <a href="tel:+13156881537"><i class="fa-solid fa-phone"></i> +1 315-688-1537</a>
+          <a href="mailto:ambeloisliquidation@gmail.com"><i class="fa-solid fa-envelope"></i> ambeloisliquidation@gmail.com</a>
+          <a href="tel:+14582764018"><i class="fa-solid fa-phone"></i> +1 (458) 276-4018</a>
         </div>
       </div>
       <div class="order-right reveal-right">
@@ -511,12 +511,34 @@
             <label>Tell Us More About Your Dream Home</label>
             <textarea id="fdesc" rows="4" placeholder="Describe your ideal home — views, atmosphere, how you'll live in it..."></textarea>
           </div>
-          <button type="submit" class="btn-submit" id="submitBtn">
-            <span>Get Your Home</span>
-            <i class="fa-solid fa-paper-plane"></i>
-          </button>
+          <div class="form-actions">
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span>Get Your Home</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <button type="button" class="btn-whatsapp" id="whatsappBtn" onclick="sendViaWhatsApp(event)">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Order via WhatsApp</span>
+            </button>
+          </div>
         </form>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ORDER CTA -->
+<section class="quick-order-section">
+  <div class="container">
+    <div class="quick-order-content reveal-up">
+      <div class="quick-order-text">
+        <h2>Ready to Order?</h2>
+        <p>Skip the details and connect with us directly on WhatsApp</p>
+      </div>
+      <button class="btn-quick-order" onclick="quickOrderWhatsApp()">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Order Now</span>
+      </button>
     </div>
   </div>
 </section>

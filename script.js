@@ -317,7 +317,7 @@ Sent from tinyhomes.com`
   submitBtn.querySelector('span').textContent = 'Sending...';
 
   setTimeout(() => {
-    window.location.href = `mailto:michealtinyhomesforsale@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:ambeloisliquidation@gmail.com?subject=${subject}&body=${body}`;
     submitBtn.classList.remove('loading');
     submitBtn.querySelector('span').textContent = 'Get Your Home';
     showToast('✨ Opening your email client...', 'success');
@@ -329,10 +329,103 @@ window.submitDream = submitDream;
 
 
 // ─────────────────────────────────────────────────
-// 11. TESTIMONIALS CAROUSEL
+// 10b. WHATSAPP ORDER
 // ─────────────────────────────────────────────────
-let currentSlide = 0;
-let autoSlideTimer;
+function sendViaWhatsApp(e) {
+  e.preventDefault();
+
+  const fname    = document.getElementById('fname')?.value.trim();
+  const fphone   = document.getElementById('fphone')?.value.trim();
+  const fsize    = document.getElementById('fsize')?.value.trim();
+  const fstyle   = document.getElementById('fstyle')?.value;
+  const floc     = document.getElementById('flocation')?.value.trim();
+  const ftl      = document.getElementById('ftimeline')?.value;
+  const fbudget  = document.getElementById('fbudget')?.value;
+  const fdesc    = document.getElementById('fdesc')?.value.trim();
+
+  if (!fname || !fphone) {
+    showToast('Please fill in your name and phone number.', 'error');
+    return;
+  }
+
+  // Collect grid
+  const selectedGrid = document.querySelector('input[name="grid"]:checked')?.value || 'Not specified';
+
+  // Collect checkboxes
+  const features = [...document.querySelectorAll('.check-opt input:checked')]
+    .map(c => c.value).join(', ') || 'None specified';
+
+  // Build message - check if specs are provided
+  const hasSpecs = fstyle || fsize || floc || selectedGrid !== 'Not specified' || features !== 'None specified' || fdesc;
+
+  let message = '';
+  if (hasSpecs) {
+    message = `Hello! I would like to order a tiny home with the following specifications:
+
+*Contact:* ${fname}
+*Phone:* ${fphone}
+
+*Specifications:*
+Size: ${fsize || 'Not specified'}
+Style: ${fstyle || 'Not specified'}
+Location: ${floc || 'Not specified'}
+Utilities: ${selectedGrid}
+Features: ${features}
+Timeline: ${ftl || 'Not specified'}
+Budget: ${fbudget || 'Not specified'}
+
+*Details:* ${fdesc || 'No additional details'}
+
+Looking forward to discussing my dream tiny home!`;
+  } else {
+    message = `Hello! I would love to order a tiny home. Can you please share more information about your available options and pricing?
+
+*Name:* ${fname}
+*Phone:* ${fphone}
+
+Thank you!`;
+  }
+
+  // WhatsApp contact number
+  const whatsappNumber = '14582764018'; // +1 458-276-4018 without formatting
+  
+  // Encode message for URL
+  const encodedMessage = encodeURIComponent(message);
+  
+  // Create WhatsApp link
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+  // Open WhatsApp
+  window.open(whatsappUrl, '_blank');
+  
+  showToast('🟢 Opening WhatsApp...', 'success');
+}
+window.sendViaWhatsApp = sendViaWhatsApp;
+
+
+// ─────────────────────────────────────────────────
+// 10c. QUICK ORDER (NO FORM)
+// ─────────────────────────────────────────────────
+function quickOrderWhatsApp() {
+  const message = `Hello! I would love to order a tiny home. Can you please share more information about your available options and pricing?
+
+Thank you!`;
+
+  // WhatsApp contact number
+  const whatsappNumber = '14582764018'; // +1 458-276-4018 without formatting
+  
+  // Encode message for URL
+  const encodedMessage = encodeURIComponent(message);
+  
+  // Create WhatsApp link
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+  // Open WhatsApp
+  window.open(whatsappUrl, '_blank');
+}
+window.quickOrderWhatsApp = quickOrderWhatsApp;
+
+
 
 function goSlide(n) {
   const slides = document.querySelectorAll('.testi-slide');
